@@ -1,3 +1,8 @@
+User.create!(
+  email: "arthurrr@gmail.com",
+  password: "arthurrr"
+)
+
 Friend.create!(
   first_name: "Hugo",
   last_name: "Mori",

@@ -1,2 +1,14 @@
-<h1>Friends#show</h1>
-<p>Find me in app/views/friends/show.html.erb</p>
+
+<!-- <span><%= image_tag "https://source.unsplash.com/collection/302501" %></span> -->
+
+<div class="header-friend">
+  <h1><%= "#{@friend.first_name} #{@friend.last_name}" %></h1>
+  <h4><%= @friend.friendship_category %></h4>
+</div>
+
+<div class="description-friend">
+  <p><%= @friend.description %></p>
+</div>
+
+
+
