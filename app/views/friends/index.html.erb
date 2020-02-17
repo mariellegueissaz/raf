@@ -1,2 +1,18 @@
-<h1>Friends#index</h1>
-<p>Find me in app/views/friends/index.html.erb</p>
+<h1>RENT A FRIEND</h1>
+<div class="cards">
+  <% @friends.each do |friend| %>
+    <div class="card" style="width: 18rem;">
+      <div class="card-img-top">
+        <% if friend.photo.attached? %>
+          <%= image_tag(friend.photo, width: 318, height: 212, :alt => "friend") %>
+        <% else %>
+          <%= image_tag("friend.png", width: 318, height: 212, :alt => "friend") %>
+        <% end %>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"><%= friend.first_name %></h5>
+        <p class="card-text"><%= friend.category %></p>
+        <a href="#" class="btn btn-primary">More Info</a>
+      </div>
+    </div>
+</div>
