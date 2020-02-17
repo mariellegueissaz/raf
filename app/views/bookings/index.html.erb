@@ -1,2 +1,19 @@
-<h1>Bookings#index</h1>
-<p>Find me in app/views/bookings/index.html.erb</p>
+<h1>My Bookings</h1>
+<div class="cards">
+  <% @bookings.each do |booking| %>
+    <div class="card" style="width: 18rem;">
+      <div class="card-img-top">
+        <% if friend.photo.attached? %>
+          <%= image_tag(friend.photo, width: 318, height: 212, :alt => "friend") %>
+        <% else %>
+          <%= image_tag("friend.png", width: 318, height: 212, :alt => "friend") %>
+        <% end %>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"><%= friend.first_name %> <%= friend.last_name %></h5>
+        <p class="card-text"><%= friend.start_time %></p>
+        <p class="card-text"><%= friend.end_time %></p>
+      </div>
+    </div>
+    <% end %>
+</div>
