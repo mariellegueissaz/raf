@@ -225,8 +225,8 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bootsnap
-  datetime_picker_input
   cloudinary (~> 1.12.0)
+  datetime_picker_input
   devise
   dotenv-rails
   font-awesome-sass (~> 5.6.1)
