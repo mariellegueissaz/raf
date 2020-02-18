@@ -28,6 +28,11 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+    @booking = Booking.find(params[:id])
+    friend = @booking.friend
+    @booking.user = current_user
+    @booking.destroy
+    redirect_to friend_bookings_path(current_user)
   end
 
   private
