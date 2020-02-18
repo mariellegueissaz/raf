@@ -4,6 +4,7 @@ class FriendsController < ApplicationController
   end
 
   def show
+    @friend = Friend.find(params[:id])
   end
 
   def new
