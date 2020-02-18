@@ -1,7 +1,18 @@
-User.create!(
+puts "Delete Database..."
+
+Friend.destroy_all
+Booking.destroy_all
+User.destroy_all
+
+puts "Create User..."
+
+arthur = User.create!(
   email: "arthurrr@gmail.com",
   password: "arthurrr"
-)
+  )
+
+puts "Create Friends..."
+
 
 Friend.create!(
   first_name: "Hugo",
@@ -10,8 +21,9 @@ Friend.create!(
   price_p_hour: "40",
   description: "Very friendly and funny",
   location: "Mulhouse",
-  user_id: 1
+  user_id: arthur.id
 )
+
 
 Friend.create!(
   first_name: "Lea",
@@ -20,7 +32,7 @@ Friend.create!(
   price_p_hour: "40",
   description: "Very friendly and funny",
   location: "Annemasse",
-  user_id: 1
+  user_id: arthur.id
 )
 
 Friend.create!(
@@ -30,7 +42,7 @@ Friend.create!(
   price_p_hour: "40",
   description: "Very friendly and funny",
   location: "Aix-en-Provence",
-  user_id: 1
+  user_id: arthur.id
 )
 
 Friend.create!(
@@ -40,7 +52,7 @@ Friend.create!(
   price_p_hour: "40",
   description: "Very smart and funny",
   location: "New York",
-  user_id: 1
+  user_id: arthur.id
 )
 
 Friend.create!(
@@ -50,5 +62,7 @@ Friend.create!(
   price_p_hour: "40",
   description: "Very sweet and funny",
   location: "Chambéry",
-  user_id: 1
+  user_id: arthur.id
 )
+
+puts "Done!"
