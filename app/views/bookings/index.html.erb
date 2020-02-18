@@ -4,16 +4,15 @@
   <% @bookings.each do |booking| %>
     <div class="card" style="width: 15rem;">
       <div class="card-img-top">
-        <% if booking.friend.photo.nil? %>
-          <%= image_tag("friend.png", width: 238, height: 212, :alt => "friend") %>
-        <% else %>
+        <% if booking.friend.photo.attached? %>
           <%= image_tag(booking.friend.photo, width: 238, height: 212, :alt => "friend") %>
+        <% else %>
+          <%= image_tag("friend.png", width: 238, height: 212, :alt => "friend") %>
         <% end %>
       </div>
       <div class="card-body">
         <h5 class="card-title"><%= booking.friend.first_name %> <%= booking.friend.last_name %></h5>
-        <p class="card-text"><%= booking.start_time %></p>
-        <p class="card-text"><%= booking.end_time %></p>
+        <p class="card-text"><%= booking.start_time.strftime("%d-%m %H:%M") %> -> <%= booking.end_time.strftime("%d-%m %H:%M") %></p>
         <p class="card-text"><%= booking.booking_price %> €</p>
       </div>
       </div>

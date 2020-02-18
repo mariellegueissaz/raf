@@ -13,8 +13,7 @@ class BookingsController < ApplicationController
     @friend = Friend.find(params[:friend_id])
     @booking.friend = @friend
     @booking.user = current_user
-    @booking_price = (@booking.start_time - @booking.end_time) * @friend.price_p_hour
-    raise
+    @booking.booking_price = ((@booking.end_time - @booking.start_time) / 3600) * @friend.price_p_hour
     if @booking.save
       redirect_to friend_bookings_path(current_user)
     else
@@ -34,6 +33,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_time, :end_time, :date, :booking_price, :friend_id, :user_id)
+    params.require(:booking).permit(:start_time, :end_time, :booking_price, :friend_id, :user_id)
   end
 end
