@@ -2,7 +2,6 @@ class FriendsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-
     @friends = Friend.all
   end
 
@@ -28,6 +27,7 @@ class FriendsController < ApplicationController
       render :new
     end
   end
+
 
   private
 

@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
   end
 
   def create
+    raise
     # @booking = Booking.new(booking_params)
     # @user = User.find(params[:user_id])
     # @friend = Friend.find(params[:friend_id])
@@ -18,6 +19,11 @@ class BookingsController < ApplicationController
     # else
     #   render :new
     # end
+  end
+
+  def book_friend
+    @friend = Friend.new
+    @booking = Booking.new
   end
 
   def edit
