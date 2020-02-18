@@ -17,7 +17,7 @@ puts "Create Friends..."
 Friend.create!(
   first_name: "Hugo",
   last_name: "Mori",
-  friendship_category: "Humour",
+  friendship_category: "Humor",
   price_p_hour: "40",
   description: "Very friendly and funny",
   location: "Mulhouse",
@@ -28,7 +28,7 @@ Friend.create!(
 Friend.create!(
   first_name: "Lea",
   last_name: "Medrano",
-  friendship_category: "Fête",
+  friendship_category: "Party",
   price_p_hour: "40",
   description: "Very friendly and funny",
   location: "Annemasse",
@@ -38,7 +38,7 @@ Friend.create!(
 Friend.create!(
   first_name: "Thibault",
   last_name: "Jaime",
-  friendship_category: "Sérieux",
+  friendship_category: "Serious",
   price_p_hour: "40",
   description: "Very friendly and funny",
   location: "Aix-en-Provence",
@@ -48,7 +48,7 @@ Friend.create!(
 Friend.create!(
   first_name: "Sinan",
   last_name: "Ucak",
-  friendship_category: "Incredible",
+  friendship_category: "Smart",
   price_p_hour: "40",
   description: "Very smart and funny",
   location: "New York",
@@ -58,7 +58,7 @@ Friend.create!(
 Friend.create!(
   first_name: "Georgina",
   last_name: "Noten",
-  friendship_category: "Humour",
+  friendship_category: "Humor",
   price_p_hour: "40",
   description: "Very sweet and funny",
   location: "Chambéry",

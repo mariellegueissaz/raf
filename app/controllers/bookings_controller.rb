@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
-   def new
+  def new
     @friend = Friend.find(params[:friend_id])
     @booking = Booking.new
   end
