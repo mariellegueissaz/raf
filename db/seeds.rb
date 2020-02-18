@@ -1,7 +1,7 @@
 puts "Delete Database..."
 
-Friend.destroy_all
 Booking.destroy_all
+Friend.destroy_all
 User.destroy_all
 
 puts "Create User..."
