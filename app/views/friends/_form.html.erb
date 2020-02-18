@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8">
+      <h3>Add a friend!</h3>
+      <%= simple_form_for friend do |f| %>
+        <%= f.input :first_name %>
+        <%= f.input :last_name %>
+        <%= f.input :friendship_category, collection: Friend::FRIEND_CAT %>
+        <%= f.input :description %>
+        <%= f.input :location %>
+        <%= f.input :price_p_hour %>
+        <%= f.input :photo, as: :file %>
+        <%= f.button :submit, class:'btn btn-primary' %>
+      <% end %>
+    </div>
+
+  </div>
+</div>
+
+

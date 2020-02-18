@@ -4,10 +4,10 @@
     <% @friends.each do |friend| %>
       <div class="card" style="width: 15rem;">
         <div class="card-img-top">
-          <% if friend.photo.nil? %>
-            <%= image_tag("friend.png", width: 238, height: 212, :alt => "friend") %>
-          <% else %>
+          <% if friend.photo.attached? %>
             <%= image_tag(friend.photo, width: 238, height: 212, :alt => "friend") %>
+          <% else %>
+            <%= image_tag("friend.png", width: 238, height: 212, :alt => "friend") %>
           <% end %>
         </div>
         <div class="card-body">
