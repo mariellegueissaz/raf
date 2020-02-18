@@ -8,7 +8,7 @@
       <% if @friend.photo.attached? %>
         <div class="img-friend" style="background-image: url('<%= @friend.photo %>');"></div>
       <% else %>
-        <div class="img-friend" style="background-image: url('https://new-image.withvolo.com/image/b48d38cb42adae700c7118da7a2cbea8/c507ecfa-8917-4985-93bb-268591ac2bbf-4e21a6443dea5aebd4f7b3e7a9429b76bd3eda83.jpg');"></div>
+        <div class="img-friend" style="background-image: url('<%= asset_path 'friend.png' %>');"></div>
       <% end %>
     </div>
 
