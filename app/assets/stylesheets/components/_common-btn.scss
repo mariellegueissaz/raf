@@ -1,0 +1,11 @@
+.common-btn {
+  padding: 5px;
+  width: 100%;
+  background-color: $pastel-light-blue;
+  text-align: center;
+}
+
+.common-btn:hover {
+  background-color: $darker-green;
+  cursor: pointer;
+}

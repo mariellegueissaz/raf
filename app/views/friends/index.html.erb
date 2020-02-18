@@ -1,22 +1,22 @@
-<div class="container">
-  <h1>RENT A FRIEND</h1>
-  <div class="cards">
-    <% @friends.each do |friend| %>
-      <div class="card" style="width: 15rem;">
-        <div class="card-img-top">
-          <% if friend.photo.attached? %>
-            <%= image_tag(friend.photo, width: 238, height: 212, :alt => "friend") %>
-          <% else %>
-            <%= image_tag("friend.png", width: 238, height: 212, :alt => "friend") %>
-          <% end %>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title"><%= friend.first_name %></h5>
-          <p class="card-text"><i>"<%= friend.friendship_category %>"</i></p>
-          <%= link_to "More Info", friend_path(friend.id), class: "btn btn-primary" %>
+<h1>RENT A FRIEND</h1>
+<div class="cards">
+  <% @friends.each do |friend| %>
+    <div class="card-col">
+      <div class="card-img">
+        <% if friend.photo.nil? %>
+          <div class="img-card" style="background-image: url('<%= asset_path 'friend.png' %>');"></div>
+        <% else %>
+          <div class="img-card" style="background-image: url('<%= friend.photo %>');"></div>
+        <% end %>
+      </div>
+      <div class="card-content">
+        <h2><%= friend.first_name %></h2>
+        <p><%= friend.friendship_category %></p>
+        <div class="common-btn">
+          <%= link_to "More Info", friend_path(friend.id) %>
+
         </div>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
-
