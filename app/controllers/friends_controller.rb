@@ -9,7 +9,7 @@ class FriendsController < ApplicationController
     if @friend.photo.attached?
       @photo = @friend.photo
     else
-      @photo = "https://media1.thehungryjpeg.com/thumbs2/ori_3505934_576443aa8ab1896562295dca0561f7550db268c7_adult-guys-men-two-best-friends-friendship-vector-concept.jpgp"
+      @photo = "https://new-image.withvolo.com/image/b48d38cb42adae700c7118da7a2cbea8/c507ecfa-8917-4985-93bb-268591ac2bbf-4e21a6443dea5aebd4f7b3e7a9429b76bd3eda83.jpg"
     end
   end
 
