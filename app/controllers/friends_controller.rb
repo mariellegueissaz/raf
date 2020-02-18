@@ -1,6 +1,6 @@
 class FriendsController < ApplicationController
   def index
-    raise
+
     @friends = Friend.all
   end
 
@@ -30,6 +30,6 @@ class FriendsController < ApplicationController
   private
 
   def friend_params
-    params.require(:friend).permit(:first_name, :last_name, :friendship_category, :price_p_hour, :proho, :description, :location, :user_id)
+    params.require(:friend).permit(:first_name, :last_name, :friendship_category, :price_p_hour, :photo, :description, :location, :user_id)
   end
 end
