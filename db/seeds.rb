@@ -1,4 +1,5 @@
 puts "Delete Database..."
+
 Friend.destroy_all
 Booking.destroy_all
 User.destroy_all
@@ -11,6 +12,7 @@ arthur = User.create!(
   )
 
 puts "Create Friends..."
+
 
 Friend.create!(
   first_name: "Hugo",
