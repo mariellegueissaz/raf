@@ -9,14 +9,15 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
-    @friend = Friend.find(params[:friend_id])
-    @booking.friend = @friend
-    if @booking.save
-      redirect_to booking_path(@booking)
-    else
-      render :new
-    end
+    # @booking = Booking.new(booking_params)
+    # @user = User.find(params[:user_id])
+    # @friend = Friend.find(params[:friend_id])
+    # @booking.friend = @friend
+    # if @booking.save
+    #   redirect_to booking_path(@booking)
+    # else
+    #   render :new
+    # end
   end
 
   def edit
@@ -30,7 +31,7 @@ class BookingsController < ApplicationController
 
   private
 
-  def boooking_params
-    params.require(:booking).permit(:start_time, :end_time, :booking_price, :friend_id, :user_id)
-  end
+  # def boooking_params
+  #   params.require(:booking).permit(:start_time, :end_time, :booking_price, :friend_id, :user_id)
+  # end
 end
