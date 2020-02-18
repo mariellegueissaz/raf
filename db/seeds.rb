@@ -1,7 +1,16 @@
+puts "Delete Database..."
+Friend.destroy_all
+Booking.destroy_all
+User.destroy_all
+
+puts "Create User..."
+
 arthur = User.create!(
   email: "arthurrr@gmail.com",
   password: "arthurrr"
   )
+
+puts "Create Friends..."
 
 Friend.create!(
   first_name: "Hugo",
@@ -53,3 +62,5 @@ Friend.create!(
   location: "Chambéry",
   user_id: arthur.id
 )
+
+puts "Done!"
