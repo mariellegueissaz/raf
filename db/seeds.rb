@@ -1,3 +1,8 @@
+arthur = User.create!(
+  email: "arthurrr@gmail.com",
+  password: "arthurrr"
+  )
+
 Friend.create!(
   first_name: "Hugo",
   last_name: "Mori",
@@ -5,8 +10,9 @@ Friend.create!(
   price_p_hour: "40",
   description: "Very friendly and funny",
   location: "Mulhouse",
-  user_id: 1
+  user_id: arthur.id
 )
+
 
 Friend.create!(
   first_name: "Lea",
@@ -15,7 +21,7 @@ Friend.create!(
   price_p_hour: "40",
   description: "Very friendly and funny",
   location: "Annemasse",
-  user_id: 1
+  user_id: arthur.id
 )
 
 Friend.create!(
@@ -25,7 +31,7 @@ Friend.create!(
   price_p_hour: "40",
   description: "Very friendly and funny",
   location: "Aix-en-Provence",
-  user_id: 1
+  user_id: arthur.id
 )
 
 Friend.create!(
@@ -35,7 +41,7 @@ Friend.create!(
   price_p_hour: "40",
   description: "Very smart and funny",
   location: "New York",
-  user_id: 1
+  user_id: arthur.id
 )
 
 Friend.create!(
@@ -45,5 +51,5 @@ Friend.create!(
   price_p_hour: "40",
   description: "Very sweet and funny",
   location: "Chambéry",
-  user_id: 1
+  user_id: arthur.id
 )
