@@ -2,7 +2,8 @@
   <div class="row justify-content-center">
     <div class="col-12 col-md-8">
       <%= simple_form_for @booking do |f| %>
-        <%= f.association :friend  %>
+        <%= f.association :friend, collection: Friend.all, label_method: :full_name, value_method: :id, :prompt => 'Pick a friend'  %>
+
         <%= f.input :start_time, as: :date_time_picker, input_html:
         { data:
           {
@@ -11,7 +12,7 @@
             date_side_by_side: true,
             date_min_date: Time.current.strftime('%Y-%m-%d')
           }
-        }%>
+        }, placeholder: 'Pick a starting time' %>
         <%= f.input :end_time, as: :date_time_picker, input_html:
         { data:
           {
@@ -20,7 +21,7 @@
             date_side_by_side: true,
             date_min_date: Time.current.strftime('%Y-%m-%d')
           }
-        }%>
+        }, placeholder: 'Pick an ending time'%>
         <%= f.button :submit %>
       <% end %>
     </div>
