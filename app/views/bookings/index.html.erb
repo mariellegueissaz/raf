@@ -14,8 +14,9 @@
         <h5 class="card-title"><%= booking.friend.first_name %> <%= booking.friend.last_name %></h5>
         <p class="card-text"><%= booking.start_time.strftime("%d-%m %H:%M") %> -> <%= booking.end_time.strftime("%d-%m %H:%M") %></p>
         <p class="card-text"><%= booking.booking_price %> €</p>
-        <%= link_to friend_bookings_path(current_user), method: :delete, data: { confirm: "Are you sure?"} do %>
+        <%= link_to friend_booking_path(booking.friend, booking), method: :delete, data: { confirm: "Are you sure? #{booking.friend.first_name} is already disappointed!"} do %>
         <i class= "far fa-trash-alt" id="delete"></i>
+        <%= link_to "Edit this booking", edit_friend_booking_path(booking.friend, booking)  %>
         <% end %>
       </div>
       </div>

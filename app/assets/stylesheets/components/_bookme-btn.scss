@@ -1,12 +1,13 @@
-.common-btn {
+.bookme-btn {
   padding: 5px;
-  width: 100%;
+  width: 200px;
   background-color: $white;
   border: 3px solid $anthracite;
   text-align: center;
+  margin-top: 30px;
 }
 
-.common-btn:hover {
+.bookme-btn:hover {
   background-color: $anthracite;
   cursor: pointer;
   a {

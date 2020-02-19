@@ -6,4 +6,8 @@ class Friend < ApplicationRecord
   validates :first_name, presence: true
   validates :price_p_hour, presence: true
   validates :friendship_category, presence: true, inclusion: { in: FRIEND_CAT }
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end
