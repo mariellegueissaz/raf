@@ -28,6 +28,14 @@ class FriendsController < ApplicationController
     end
   end
 
+  def edit
+    raise
+    @friend = Friend.find(params[:id])
+  end
+
+  def update
+
+  end
 
   private
 
