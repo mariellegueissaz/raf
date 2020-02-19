@@ -1,18 +1,25 @@
 .friend-card {
   background-color: $white;
   display: flex;
+  flex-wrap: wrap;
+  border: 3px solid $anthracite;
+}
+
+
+.friend-content {
+  margin-top: 30px;
+  padding: 10px;
+  flex-grow: 8;
+}
+
+// CONTENT OF THE CARD
+
+.friend-picture {
+  flex-grow: 1;
 }
 
 .price {
   text-align: right;
-}
-
-.friend-card h1 {
-  border-bottom: 1px solid $dark-blue;
-}
-
-.friend-picture {
-  margin-right: 20px;
 }
 
 .img-friend {
@@ -23,9 +30,34 @@
 
 .friend-category {
   display: flex;
+  margin-top: 30px;
+  border-bottom: 1px solid $anthracite;
 }
 
-.category {
-  padding: 5px;
-  background-color: $darker-pink;
+.friend-category p {
+  margin-right: 20px;
+  text-transform: uppercase;
+  font-size: 18px;
 }
+
+.color-category {
+  color: $warm-orange;
+  font-weight: 700;
+}
+
+.description-friend p {
+  padding: none;
+}
+
+.description-friend {
+  font-style: italic;
+  font-weight: 300;
+  margin-top: 20px;
+  border-bottom: 1px solid $anthracite;
+}
+
+
+
+
+
+
