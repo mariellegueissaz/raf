@@ -5,11 +5,7 @@
   </div>
   <div class="friend-card">
     <div class="friend-picture">
-      <% if @friend.photo.attached? %>
-        <div class="img-friend" style="background-image: url('<%= @friend.photo %>');"></div>
-      <% else %>
-        <div class="img-friend" style="background-image: url('<%= asset_path 'friend.png' %>');"></div>
-      <% end %>
+      <%= image_tag(@photo, class: "img-friend", :alt => "friend") %>
     </div>
 
     <div class="friend-content">

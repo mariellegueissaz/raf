@@ -3,11 +3,13 @@
   <% @friends.each do |friend| %>
     <div class="card-col">
       <div class="card-img">
-        <% if friend.photo.attached? %>
-          <div class="img-card" style="background-image: url('<%= friend.photo %>');"></div>
-        <% else %>
-          <div class="img-card" style="background-image: url('<%= asset_path 'friend.png' %>');"></div>
-        <% end %>
+          <div class="img-card">
+            <% if friend.photo.attached? %>
+            <%= image_tag(friend.photo, class: "img-card", :alt => "friend") %>
+          <% else %>
+            <%= image_tag("friend.png", class: "img-card", :alt => "friend") %>
+          <% end %>
+          </div>
       </div>
       <div class="card-content">
         <h2><%= friend.first_name %></h2>
