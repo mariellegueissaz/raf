@@ -1,10 +1,11 @@
 .friend-card {
   background-color: $white;
   display: flex;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
   border: 3px solid $anthracite;
 }
 
+// CONTENT OF THE CARD
 
 .friend-content {
   margin-top: 30px;
@@ -12,10 +13,10 @@
   flex-grow: 8;
 }
 
-// CONTENT OF THE CARD
 
 .friend-picture {
   flex-grow: 1;
+  background-size: cover;
 }
 
 .price {
@@ -24,8 +25,6 @@
 
 .img-friend {
   width: 400px;
-  height: 400px;
-  background-size: cover;
 }
 
 .friend-category {
