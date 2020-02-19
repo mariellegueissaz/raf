@@ -2,7 +2,6 @@ class FriendsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-
     @friends = Friend.all
   end
 
@@ -27,6 +26,16 @@ class FriendsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    @friend = Friend.find(params[:id])
+  end
+
+  def update
+    @friend = Friend.find(params[:id])
+    @friend.update(friend_params)
+    redirect_to friend_path(@friend)
   end
 
   private

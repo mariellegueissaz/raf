@@ -1,25 +1,32 @@
-<div class="content row">
-  <div class="back-link col-1">
-    <%= link_to friends_path do %>
-      <i class="fas fa-undo-alt back"></i>
+
+<div class="backlink">
+  <%= link_to friends_path do %>
+    <i class="fas fa-chevron-left"></i>
+  <% end %>
+  <%= link_to edit_friend_path(@friend) do %>
+      <i class="fas fa-edit"></i>
     <% end %>
-  </div>
-  <div class="banner-friend col-6">
-    <%= image_tag(@photo, :alt => "friend") %>
+</div>
+
+<div class="friend-card">
+  <div class="friend-picture">
+    <%= image_tag(@photo, class: "img-friend", :alt => "friend") %>
   </div>
 
-  <div class="friend-card col-5">
-    <h1><%= "#{@friend.first_name} #{@friend.last_name}" %></h1>
-      <p><span class="price"><%= @friend.price_p_hour %>$</span> / hour</p>
-      <h4><%= @friend.friendship_category %></h4>
+  <div class="friend-content">
+      <h1><%= "#{@friend.first_name} #{@friend.last_name}" %></h1>
+    <div class="price">
+      <p><%= @friend.price_p_hour %>$ / hour</p>
+    </div>
+    <div class="friend-category">
+      <p>Category</p>
+      <p class="color-category"><%= @friend.friendship_category %></p>
+    </div>
     <div class="description-friend">
       <p><%= @friend.description %></p>
     </div>
-    <div class="btn btn-primary">
+    <div class="bookme-btn">
       <%= link_to 'Book me', new_friend_booking_path(@friend) %>
     </div>
   </div>
 </div>
-
-
-

@@ -10,7 +10,11 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @friend = Friend.find(params[:friend_id])
+    if params[:friend_id].nil?
+      @friend = Friend.find(params[:booking][:friend_id])
+    else
+      @friend = Friend.find(params[:friend_id])
+    end
     @booking.friend = @friend
     @booking.user = current_user
     @booking.booking_price = ((@booking.end_time - @booking.start_time) / 3600) * @friend.price_p_hour
@@ -22,12 +26,15 @@ class BookingsController < ApplicationController
   end
 
    def edit
-
     @friend = Friend.find(params[:friend_id])
     @booking = Booking.find(params[:id])
-
   end
-
+  
+  def book_friend
+    @friend = Friend.new
+    @booking = Booking.new
+  end
+  
   def update
     @friend = Friend.find(params[:friend_id])
     @booking = Booking.find(params[:id])
