@@ -2,6 +2,9 @@
     <%= link_to friends_path do %>
       <i class="fas fa-undo-alt back"></i>
     <% end %>
+    <%= link_to edit_friend_path(@friend) do %>
+      <i class="fas fa-edit"></i>
+    <% end %>
   </div>
   <div class="friend-card">
     <div class="friend-picture">
@@ -24,9 +27,6 @@
         <%= link_to 'Book me', new_friend_booking_path(@friend) %>
       </div>
     </div>
-  <div class="edit-link">
-    <%= link_to "Edit Friend", edit_friend_path(@friend) %>
-  </div>
   </div>
 
 

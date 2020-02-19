@@ -29,12 +29,13 @@ class FriendsController < ApplicationController
   end
 
   def edit
-    raise
     @friend = Friend.find(params[:id])
   end
 
   def update
-
+    @friend = Friend.find(params[:id])
+    @friend.update(friend_params)
+    redirect_to friend_path(@friend)
   end
 
   private
