@@ -1,7 +1,11 @@
+
 <div class="backlink">
   <%= link_to friends_path do %>
     <i class="fas fa-chevron-left"></i>
   <% end %>
+  <%= link_to edit_friend_path(@friend) do %>
+      <i class="fas fa-edit"></i>
+    <% end %>
 </div>
 
 <div class="friend-card">
