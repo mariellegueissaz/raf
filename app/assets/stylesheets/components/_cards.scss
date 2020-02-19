@@ -1,12 +1,17 @@
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
-  padding:20px;
+.card-col {
+  width: 220px;
+  margin: 15px 10px;
+  background-color: $white;
+  border: 3px solid $anthracite;
 }
 
-.card {
-  border-radius: 5px;
-box-shadow: 0 8px 6px -6px black;
+.img-card {
+  width: 214px;
+  height: 214px;
+  background-size: cover;
+}
+
+.card-content {
+  margin-top: 10px;
+  padding: 7px;
 }

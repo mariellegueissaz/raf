@@ -1,0 +1,16 @@
+.home-banner {
+  height: 100vh;
+  display: flex;
+  padding-top: 50px;
+}
+
+.home-banner p {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 120px;
+  line-height: 120px;
+}
+
+.home-banner span {
+  text-decoration: underline;
+}
