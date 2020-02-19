@@ -21,7 +21,8 @@ Friend.create!(
   price_p_hour: "40",
   description: "Very friendly and funny",
   location: "Mulhouse",
-  user_id: arthur.id
+  user_id: arthur.id,
+  photo: Cloudinary::Uploader.upload("boy1.jpeg")
 )
 
 
@@ -32,7 +33,8 @@ Friend.create!(
   price_p_hour: "40",
   description: "Very friendly and funny",
   location: "Annemasse",
-  user_id: arthur.id
+  user_id: arthur.id,
+  photo: Cloudinary::Uploader.upload("girl1.jpeg")
 )
 
 Friend.create!(
@@ -42,7 +44,8 @@ Friend.create!(
   price_p_hour: "40",
   description: "Very friendly and funny",
   location: "Aix-en-Provence",
-  user_id: arthur.id
+  user_id: arthur.id,
+  photo: Cloudinary::Uploader.upload("boy2.jpeg")
 )
 
 Friend.create!(
@@ -52,7 +55,8 @@ Friend.create!(
   price_p_hour: "40",
   description: "Very smart and funny",
   location: "New York",
-  user_id: arthur.id
+  user_id: arthur.id,
+  photo: Cloudinary::Uploader.upload("boy3.jpeg")
 )
 
 Friend.create!(
@@ -62,7 +66,8 @@ Friend.create!(
   price_p_hour: "40",
   description: "Very sweet and funny",
   location: "Chambéry",
-  user_id: arthur.id
+  user_id: arthur.id,
+  photo: Cloudinary::Uploader.upload("girl2.jpeg")
 )
 
 puts "Done!"
