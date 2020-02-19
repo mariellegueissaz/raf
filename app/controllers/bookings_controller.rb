@@ -21,10 +21,22 @@ class BookingsController < ApplicationController
     end
   end
 
-  def edit
+   def edit
+    @friend = Friend.find(params[:friend_id])
+    @booking = Booking.find(params[:id])
   end
 
   def update
+    @friend = Friend.find(params[:friend_id])
+    @booking = Booking.find(params[:id])
+    @booking.friend = @friend
+    @booking.user = current_user
+    @booking.booking_price = ((@booking.end_time - @booking.start_time) / 3600) * @friend.price_p_hour
+    if @booking.update(booking_params)
+      redirect_to friend_bookings_path(current_user)
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -39,5 +51,5 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:start_time, :end_time, :booking_price, :friend_id, :user_id)
-  end
+end
 end
