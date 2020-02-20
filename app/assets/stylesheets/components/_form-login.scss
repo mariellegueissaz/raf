@@ -1,0 +1,27 @@
+.form-login {
+  width: 450px;
+  margin: 0 auto;
+  .form-group {
+    height: 100%;
+  }
+}
+
+.user-choice-login {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  a {
+    color: $white;
+  }
+  a:hover{
+    color: $anthracite;
+  }
+}
+
+.form-login h2 {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 23px;
+  border-bottom: 3px solid $anthracite;
+  padding: 10px;
+}
