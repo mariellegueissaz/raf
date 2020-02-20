@@ -1,13 +1,23 @@
 class FriendsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
-  def index
-    @friends = Friend.all
-    @friends_geo = Friend.geocoded
-
-    @markers = @friends_geo.map { |frnd| { lat: frnd.latitude, lng: frnd.longitude, infoWindow: render_to_string(partial: "info_window", locals: { friend: frnd }) } }
-
-  end
+ def index
+    if params[:query].present?
+      sql_query = " \
+        friends.first_name ILIKE :query \
+        OR friends.last_name ILIKE :query \
+        OR friends.friendship_category ILIKE :query \
+        OR friends.location ILIKE :query \
+      "
+      @friends = Friend.where(sql_query, query: "%#{params[:query]}%")
+      @friends_geo = Friend.geocoded
+      @markers = @friends_geo.map { |frnd| { lat: frnd.latitude, lng: frnd.longitude, infoWindow: render_to_string(partial: "info_window", locals: { friend: frnd }) } }
+    else
+      @friends = Friend.all
+      @friends_geo = Friend.geocoded
+      @markers = @friends_geo.map { |frnd| { lat: frnd.latitude, lng: frnd.longitude, infoWindow: render_to_string(partial: "info_window", locals: { friend: frnd }) } }
+    end
+ end
 
 
   def show
@@ -33,6 +43,15 @@ class FriendsController < ApplicationController
     end
   end
 
+  def edit
+    @friend = Friend.find(params[:id])
+  end
+
+  def update
+    @friend = Friend.find(params[:id])
+    @friend.update(friend_params)
+    redirect_to friend_path(@friend)
+  end
 
   private
 
