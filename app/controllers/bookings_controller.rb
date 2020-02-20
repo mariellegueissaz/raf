@@ -1,8 +1,8 @@
 class BookingsController < ApplicationController
   def index
-    @bks = Booking.all.where('user = current_user')
-    @bookings = @bks.select {|booking| booking.start_time.utc > Date.today}
-    @new_bookings = @bks.reject {|booking| booking.start_time.utc > Date.today}
+    @bookings = Booking.all.where('user = current_user')
+    @future_bookings = @bookings.select {|booking| booking.start_time.utc > Date.today}
+    @previous_bookings = @bookings.reject {|booking| booking.start_time.utc > Date.today}
   end
 
   def new
