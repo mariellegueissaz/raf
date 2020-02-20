@@ -1,8 +1,18 @@
 class FriendsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
-  def index
-    @friends = Friend.all
+ def index
+    if params[:query].present?
+      sql_query = " \
+        friends.first_name ILIKE :query \
+        OR friends.last_name ILIKE :query \
+        OR friends.friendship_category ILIKE :query \
+        OR friends.location ILIKE :query \
+      "
+      @friends = Friend.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @friends = Friend.all
+    end
   end
 
   def show
