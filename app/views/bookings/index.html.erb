@@ -49,7 +49,7 @@
             <i class= "far fa-trash-alt" id="delete"></i>
           </div>
           <div class="common-btn">
-            <%= link_to "Edit this booking", edit_friend_booking_path(previous_booking.friend, previous_booking)  %>
+            <%= link_to "Review", new_friend_booking_review_path(previous_booking.friend, previous_booking)  %>
           </div>
        <% end %>
       </div>
