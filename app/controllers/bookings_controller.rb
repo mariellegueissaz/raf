@@ -1,6 +1,8 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.all.where('user = current_user')
+    @bks = Booking.all.where('user = current_user')
+    @bookings = @bks.select {|booking| booking.start_time.utc > Date.today}
+    @new_bookings = @bks.reject {|booking| booking.start_time.utc > Date.today}
   end
 
   def new
@@ -29,12 +31,12 @@ class BookingsController < ApplicationController
     @friend = Friend.find(params[:friend_id])
     @booking = Booking.find(params[:id])
   end
-  
+
   def book_friend
     @friend = Friend.new
     @booking = Booking.new
   end
-  
+
   def update
     @friend = Friend.find(params[:friend_id])
     @booking = Booking.find(params[:id])

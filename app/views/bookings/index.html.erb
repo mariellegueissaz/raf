@@ -1,30 +1,60 @@
 <div class="container">
-<h1>My Bookings</h1>
-<div class="my-booking-content">
-  <% @bookings.each do |booking| %>
-    <div class="booking-cards">
+  <h1>My Bookings</h1>
+  <div class="my-booking-content">
+    <% @bookings.each do |booking| %>
+      <div class="booking-cards">
+        <div class="booking-card-img">
+          <% if booking.friend.photo.attached? %>
+            <%= image_tag(booking.friend.photo, class: "bk-img-card", :alt => "friend") %>
+          <% else %>
+            <%= image_tag("friend.png", class: "bk-img-card", :alt => "friend") %>
+          <% end %>
+        </div>
+        <div class="bk-card-body">
+          <h3 class="bk-card-title"><%= booking.friend.first_name %> <%= booking.friend.last_name %></h3>
+          <p class="bk-card-text"><i class="fas fa-clock"></i> <%= booking.start_time.strftime("%d-%m %H:%M") %> <i class="fas fa-long-arrow-alt-right"></i> <%= booking.end_time.strftime("%d-%m %H:%M") %></p>
+          <p class="card-text">Total amount <span class="bolder-text">$<%= booking.booking_price %></span></p>
+          <div class="footer-booking-card">
+            <div class="common-btn">
+              <%= link_to friend_booking_path(booking.friend, booking), method: :delete, data: { confirm: "Are you sure? #{booking.friend.first_name} is already disappointed!"} do %>
+              <i class= "far fa-trash-alt" id="delete"></i>
+            </div>
+            <div class="common-btn">
+              <%= link_to "Edit this booking", edit_friend_booking_path(booking.friend, booking)  %>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <h1>My previous Bookings</h1>
+  <div class="my-booking-content">
+      <% @new_bookings.each do |new_booking| %>
+      <div class="booking-cards">
       <div class="booking-card-img">
-        <% if booking.friend.photo.attached? %>
-          <%= image_tag(booking.friend.photo, class: "bk-img-card", :alt => "friend") %>
+        <% if new_booking.friend.photo.attached? %>
+          <%= image_tag(new_booking.friend.photo, class: "bk-img-card", :alt => "friend") %>
         <% else %>
           <%= image_tag("friend.png", class: "bk-img-card", :alt => "friend") %>
         <% end %>
       </div>
       <div class="bk-card-body">
-        <h3 class="bk-card-title"><%= booking.friend.first_name %> <%= booking.friend.last_name %></h3>
-        <p class="bk-card-text"><i class="fas fa-clock"></i> <%= booking.start_time.strftime("%d-%m %H:%M") %> <i class="fas fa-long-arrow-alt-right"></i> <%= booking.end_time.strftime("%d-%m %H:%M") %></p>
-        <p class="card-text">Total amount <span class="bolder-text">$<%= booking.booking_price %></span></p>
+        <h3 class="bk-card-title"><%= new_booking.friend.first_name %> <%= new_booking.friend.last_name %></h3>
+        <p class="bk-card-text"><i class="fas fa-clock"></i> <%= new_booking.start_time.strftime("%d-%m %H:%M") %> <i class="fas fa-long-arrow-alt-right"></i> <%= new_booking.end_time.strftime("%d-%m %H:%M") %></p>
+        <p class="card-text">Total amount <span class="bolder-text">$<%= new_booking.booking_price %></span></p>
         <div class="footer-booking-card">
           <div class="common-btn">
-            <%= link_to friend_booking_path(booking.friend, booking), method: :delete, data: { confirm: "Are you sure? #{booking.friend.first_name} is already disappointed!"} do %>
+            <%= link_to friend_booking_path(new_booking.friend, new_booking), method: :delete, data: { confirm: "Are you sure? #{new_booking.friend.first_name} is already disappointed!"} do %>
             <i class= "far fa-trash-alt" id="delete"></i>
           </div>
           <div class="common-btn">
-            <%= link_to "Edit this booking", edit_friend_booking_path(booking.friend, booking)  %>
+            <%= link_to "Edit this booking", edit_friend_booking_path(new_booking.friend, new_booking)  %>
           </div>
-          <% end %>
-        </div>
+       <% end %>
+      </div>
       </div>
     </div>
   <% end %>
 </div>
+
