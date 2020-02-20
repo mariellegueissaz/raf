@@ -1,0 +1,9 @@
+.search-btn {
+  border: 3px solid $white;
+  padding: 0 15px;
+  &:hover {
+    background-color: $warm-orange;
+    border-color: $warm-orange;
+  }
+}
+
