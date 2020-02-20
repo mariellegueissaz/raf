@@ -1,11 +1,15 @@
 
-<div class="backlink">
-  <%= link_to friends_path do %>
-    <i class="fas fa-chevron-left"></i>
-  <% end %>
-  <%= link_to edit_friend_path(@friend) do %>
-      <i class="fas fa-edit"></i>
+<div class="links">
+  <div class="backlink">
+    <%= link_to friends_path do %>
+      <i class="fas fa-chevron-left"></i>
     <% end %>
+  </div>
+  <div class="edit-link">
+    <%= link_to edit_friend_path(@friend) do %>
+        <i class="fas fa-edit"></i>
+    <% end %>
+  </div>
 </div>
 
 <div class="friend-card">
@@ -25,8 +29,10 @@
     <div class="description-friend">
       <p><%= @friend.description %></p>
     </div>
-    <div class="bookme-btn">
-      <%= link_to 'Book me', new_friend_booking_path(@friend) %>
+    <div class="footer-card">
+      <div class="bookme-btn">
+        <%= link_to 'Book me', new_friend_booking_path(@friend) %>
+      </div>
     </div>
   </div>
 </div>
