@@ -1,0 +1,19 @@
+#map {
+  margin-bottom: 50px;
+  margin-top: 30px;
+  border: 3px solid $anthracite;
+
+}
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  padding: 16px 10px 13px;
+}
+
+.mapboxgl-popup-content p {
+  font-size: 14px;
+}
