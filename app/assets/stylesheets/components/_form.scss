@@ -1,0 +1,120 @@
+// MY CSS
+
+.form-box {
+  margin: 30px 0;
+  border-top: 3px solid $anthracite;
+  border-right: 3px solid $anthracite;
+  border-left: 3px solid $anthracite;
+  // padding: 20px;
+  max-width: 996px;
+}
+
+label {
+  font-family: $body-font;
+  text-transform: uppercase;
+  color: $anthracite;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+input {
+  outline: none;
+}
+
+::placeholder {
+  font-style: italic;
+}
+
+// button create
+.btn {
+  color: $anthracite;
+}
+
+.btn:hover {
+  color: $white;
+}
+
+//////////
+
+.form-control {
+  border: 0;
+  box-shadow: none;
+  background-color: $white;
+}
+
+.flex {
+  display: flex;
+}
+
+.right {
+  border-left: 3px solid $anthracite;
+}
+
+.half {
+  width: 498px;
+}
+
+.form-group {
+  margin-bottom: 0;
+  padding: 10px;
+  height: 100px;
+  border-bottom: 3px solid $anthracite;
+}
+
+.download-btn label {
+  margin-bottom: 15px;
+}
+
+// .form-control select {
+//   color: red;
+// }
+
+// .form-control.is-valid {
+//   border-color: $anthracite;
+// }
+
+///////////
+
+///////// BTN DOWNLOAD
+
+// input[type="file"] {
+//     position: absolute;
+//     width: 1px;
+//     height: 1px;
+//     padding: 0;
+//     margin: -1px;
+//     overflow: hidden;
+//     clip: rect(10px,100px,50px,10px);
+//     border: 0;
+// }
+// .custom-file-upload {
+//     // margin-top: 20px;
+//     border: 3px solid $anthracite;
+//     display: inline-block;
+//     padding: 5px 8px;
+//     cursor: pointer;
+// }
+
+// .download-btn label {
+//   display: none;
+// }
+
+////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

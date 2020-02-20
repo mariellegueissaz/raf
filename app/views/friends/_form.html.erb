@@ -1,17 +1,34 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-12 col-md-8">
-      <h3>Add a friend!</h3>
+<div class="form-container">
+  <h1>Add a friend!</h1>
+    <div class="form-box">
       <%= simple_form_for friend do |f| %>
-        <%= f.input :first_name %>
-        <%= f.input :last_name %>
-        <%= f.input :friendship_category, collection: Friend::FRIEND_CAT %>
-        <%= f.input :description %>
-        <%= f.input :location %>
-        <%= f.input :price_p_hour %>
-        <%= f.input :photo, as: :file %>
-        <%= f.button :submit, class:'btn btn-primary' %>
+      <div class="flex">
+        <div class="half">
+          <%= f.input :first_name, placeholder: 'Arthur' %>
+        </div>
+        <div class="half right">
+          <%= f.input :last_name, placeholder: 'Doe' %>
+        </div>
+      </div>
+      <!-- <div class="custom-select"> -->
+        <%= f.input :friendship_category, collection: Friend::FRIEND_CAT, :prompt => 'Choose a category', class: "form-dropdown" %>
+     <!--  </div> -->
+        <%= f.input :description, placeholder: 'Your description here' %>
+        <div class="flex">
+          <div class="half">
+            <%= f.input :location, placeholder: 'Lausanne' %>
+          </div>
+          <div class="half right">
+            <%= f.input :price_p_hour, label: "price per hour", placeholder: '230$' %>
+          </div>
+        </div>
+<!--         <label for="file-upload" class="custom-file-upload">
+          Download a picture
+        </label> -->
+        <div class="download-btn">
+          <%= f.input :photo, as: :file %>
+        </div>
+        </div>
+        <%= f.button :submit, class:'common-btn' %>
       <% end %>
-    </div>
-  </div>
 </div>

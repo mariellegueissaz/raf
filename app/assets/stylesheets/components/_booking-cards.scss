@@ -1,0 +1,38 @@
+.my-booking-content {
+  margin-top: 50px;
+}
+
+.booking-cards {
+  display: flex;
+  border: 3px solid $anthracite;
+  margin-bottom: 20px;
+}
+
+.bk-img-card {
+  height: 200px;
+  width: 300px;
+}
+
+.bk-card-body {
+  padding: 10px;
+  width: 400px;
+  h3 {
+    font-weight: 700;
+    font-size: 23px;
+    margin-bottom: 10px;
+  }
+}
+
+.bk-card-text {
+  i {
+    margin-right: 10px;
+  }
+}
+
+.footer-booking-card {
+  display: flex;
+  margin-top: 30px;
+  .common-btn {
+    margin-right: 20px;
+  }
+}
