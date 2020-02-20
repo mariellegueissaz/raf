@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.all
+    @bookings = Booking.all.where('user = current_user')
   end
 
   def new
@@ -19,13 +19,13 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.booking_price = ((@booking.end_time - @booking.start_time) / 3600) * @friend.price_p_hour
     if @booking.save
-      redirect_to friend_bookings_path(current_user)
+      redirect_to mybookings_path
     else
       render :new
     end
   end
 
-  def edit
+   def edit
     @friend = Friend.find(params[:friend_id])
     @booking = Booking.find(params[:id])
   end
@@ -38,14 +38,13 @@ class BookingsController < ApplicationController
   def update
     @friend = Friend.find(params[:friend_id])
     @booking = Booking.find(params[:id])
-    @booking.friend = @friend
-    @booking.user = current_user
-    @booking.booking_price = ((@booking.end_time - @booking.start_time) / 3600) * @friend.price_p_hour
     if @booking.update(booking_params)
-      redirect_to friend_bookings_path(current_user)
+      redirect_to mybookings_path
     else
       render :edit
     end
+     @booking.booking_price = ((@booking.end_time - @booking.start_time) / 3600) * @friend.price_p_hour
+     @booking.update(booking_params)
   end
 
   def destroy
@@ -53,7 +52,7 @@ class BookingsController < ApplicationController
     friend = @booking.friend
     @booking.user = current_user
     @booking.destroy
-    redirect_to friend_bookings_path(current_user)
+    redirect_to mybookings_path
   end
 
   private
