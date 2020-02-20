@@ -19,8 +19,9 @@
 
   <div class="friend-content">
       <h1><%= "#{@friend.first_name} #{@friend.last_name}" %></h1>
-    <div class="price">
-      <p><%= @friend.price_p_hour %>$ / hour</p>
+    <div class="infos">
+      <p><i class="fas fa-home"></i> <%= @friend.location %></p>
+      <p><i class="fas fa-money-check-alt"></i> <%= @friend.price_p_hour %>$ / hour</p>
     </div>
     <div class="friend-category">
       <p>Category</p>
