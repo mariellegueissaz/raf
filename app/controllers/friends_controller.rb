@@ -7,7 +7,7 @@ class FriendsController < ApplicationController
 
     @markers = @friends_geo.map { |frnd| { lat: frnd.latitude, lng: frnd.longitude } }
 
-    end
+  end
 
 
   def show
