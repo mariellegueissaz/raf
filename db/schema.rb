@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 2020_02_20_140411) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "date"
     t.index ["friend_id"], name: "index_bookings_on_friend_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
