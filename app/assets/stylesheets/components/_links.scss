@@ -1,4 +1,8 @@
-.backlink {
+.links {
+  display: flex;
+  justify-content: space-between;
+}
+.backlink, .edit-link{
   width: 100px;
   padding: 2px 0;
   background-color: $anthracite;
