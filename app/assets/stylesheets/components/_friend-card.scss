@@ -18,8 +18,9 @@
   flex-grow: 1;
 }
 
-.price {
-  text-align: right;
+.infos {
+  display: flex;
+  justify-content: space-between;
 }
 
 .friend-picture {
