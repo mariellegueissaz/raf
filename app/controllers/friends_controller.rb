@@ -10,10 +10,15 @@ class FriendsController < ApplicationController
         OR friends.location ILIKE :query \
       "
       @friends = Friend.where(sql_query, query: "%#{params[:query]}%")
+      @friends_geo = Friend.geocoded
+      @markers = @friends_geo.map { |frnd| { lat: frnd.latitude, lng: frnd.longitude, infoWindow: render_to_string(partial: "info_window", locals: { friend: frnd }) } }
     else
       @friends = Friend.all
+      @friends_geo = Friend.geocoded
+      @markers = @friends_geo.map { |frnd| { lat: frnd.latitude, lng: frnd.longitude, infoWindow: render_to_string(partial: "info_window", locals: { friend: frnd }) } }
     end
-  end
+ end
+
 
   def show
     @friend = Friend.find(params[:id])
