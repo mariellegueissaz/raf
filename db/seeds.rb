@@ -57,7 +57,7 @@ sinan = Friend.create!(
   friendship_category: "Smart",
   price_p_hour: "40",
   description: "Very smart and funny",
-  location: "New York",
+  location: "Sion",
   user_id: arthur.id
 )
 sinan.photo.attach(io: File.open('app/assets/images/boy3.jpeg'), filename: 'boy.jpg')
