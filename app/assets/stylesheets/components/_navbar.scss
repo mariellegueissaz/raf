@@ -2,6 +2,9 @@
   justify-content: space-between;
   background: $white;
   border-bottom: 3px solid $anthracite;
+  .flex {
+    margin-right: 10px;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -60,8 +63,4 @@
   [type="submit"]:hover {
     color: $white;
   }
-}
-
-.flex {
-  margin-right: 10px;
 }
