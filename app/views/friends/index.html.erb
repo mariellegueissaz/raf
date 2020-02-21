@@ -4,31 +4,31 @@
 <h1>Choose a friend</h1>
 <div class="cards">
   <% @friends.each do |friend| %>
-    <div class="card-col">
-      <div class="card-img">
-          <div class="img-card">
-            <% if friend.photo.attached? %>
-            <%= cl_image_tag friend.photo.key, class: "img-card", :alt => "friend" %>
-          <% else %>
-            <%= image_tag("friend.png", class: "img-card", :alt => "friend") %>
-          <% end %>
-          </div>
-      </div>
-      <div class="card-content">
-        <h2><%= friend.first_name %></h2>
-        <p><%= friend.friendship_category %></p>
-        <div class="common-btn">
-          <%= link_to "More Info", friend_path(friend.id) %>
-        </div>
+  <div class="card-col">
+    <div class="card-img">
+      <div class="img-card">
+        <% if friend.photo.attached? %>
+        <%= cl_image_tag friend.photo.key, class: "img-card", :alt => "friend" %>
+        <% else %>
+        <%= image_tag("friend.png", class: "img-card", :alt => "friend") %>
+        <% end %>
       </div>
     </div>
+    <div class="card-content">
+      <h2><%= friend.first_name %></h2>
+      <p><%= friend.friendship_category %></p>
+      <div class="common-btn">
+        <%= link_to "More Info", friend_path(friend.id) %>
+      </div>
+    </div>
+  </div>
   <% end %>
 </div>
 
 <div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+id="map"
+style="width: 1000px;
+height: 600px;"
+data-markers="<%= @markers.to_json %>"
+data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
