@@ -34,6 +34,7 @@ const fitMapToMarkers = (map, markers) => {
     markers.forEach((marker) => {
       new mapboxgl.Marker()
         .setLngLat([ marker.lng, marker.lat ])
+        .setPopup(popup)
         .addTo(map);
   });
     addMarkersToMap(map,markers);
