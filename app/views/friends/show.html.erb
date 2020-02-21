@@ -37,3 +37,9 @@
     </div>
   </div>
 </div>
+
+<% @friend.reviews.each do |review| %>
+<%= review.content %>
+<%= review.rating %>
+<%= review.friend.user.email %>
+<% end %>

@@ -16,11 +16,11 @@
           <p class="card-text">Total amount <span class="bolder-text">$<%= booking.booking_price %></span></p>
           <div class="footer-booking-card">
             <div class="common-btn">
-              <%= link_to friend_booking_path(booking.friend, booking), method: :delete, data: { confirm: "Are you sure? #{booking.friend.first_name} is already disappointed!"} do %>
+              <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure? #{booking.friend.first_name} is already disappointed!"} do %>
               <i class= "far fa-trash-alt" id="delete"></i>
             </div>
             <div class="common-btn">
-              <%= link_to "Edit this booking", edit_friend_booking_path(booking.friend, booking)  %>
+              <%= link_to "Edit this booking", edit_booking_path(booking)  %>
             </div>
             <% end %>
           </div>
@@ -45,13 +45,8 @@
         <p class="card-text">Total amount <span class="bolder-text">$<%= previous_booking.booking_price %></span></p>
         <div class="footer-booking-card">
           <div class="common-btn">
-            <%= link_to friend_booking_path(previous_booking.friend, previous_booking), method: :delete, data: { confirm: "Are you sure? #{previous_booking.friend.first_name} is already disappointed!"} do %>
-            <i class= "far fa-trash-alt" id="delete"></i>
+            <%= link_to "Review", new_booking_review_path(previous_booking)  %>
           </div>
-          <div class="common-btn">
-            <%= link_to "Review", new_friend_booking_review_path(previous_booking.friend, previous_booking)  %>
-          </div>
-       <% end %>
       </div>
       </div>
     </div>
