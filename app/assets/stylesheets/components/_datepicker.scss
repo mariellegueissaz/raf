@@ -1,0 +1,65 @@
+.btn[data-action="togglePeriod"], .btn-primary[data-action="togglePeriod"] {
+  background-color: $white;
+  color: $anthracite;
+  border: 3px solid $anthracite;
+  &:hover {
+    background-color: $anthracite;
+    color: $white;
+  }
+}
+
+.bootstrap-datetimepicker-widget td.day:hover,
+.bootstrap-datetimepicker-widget td.hour:hover,
+.bootstrap-datetimepicker-widget td.minute:hover,
+.bootstrap-datetimepicker-widget td.second:hover {
+  background-color: $anthracite !important;
+  color: $white !important;
+  cursor: pointer;
+}
+
+.bootstrap-datetimepicker-widget td.today:before {
+  content: '';
+  display: inline-block;
+  border-left: 7px solid transparent;
+  border-bottom: 7px solid $anthracite;
+  border-top-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+}
+
+.bootstrap-datetimepicker-widget td.active,
+.bootstrap-datetimepicker-widget td.active:hover {
+  background-color: $warm-orange !important;
+  color: $white;
+  text-shadow: none !important;
+}
+
+.bootstrap-datetimepicker-widget td.active.today:before {
+  border-bottom-color: $warm-orange !important;
+}
+
+.bootstrap-datetimepicker-widget td span:hover {
+  background-color: $anthracite !important;
+  color: $white;
+}
+
+.bootstrap-datetimepicker-widget td span.active {
+  background-color: $warm-orange !important;
+  color: $white !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

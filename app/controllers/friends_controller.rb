@@ -10,12 +10,12 @@ class FriendsController < ApplicationController
         OR friends.location ILIKE :query \
       "
       @friends = Friend.where(sql_query, query: "%#{params[:query]}%")
-      @friends_geo = Friend.geocoded
-      @markers = @friends_geo.map { |frnd| { lat: frnd.latitude, lng: frnd.longitude, infoWindow: render_to_string(partial: "info_window", locals: { friend: frnd }) } }
+      @friends_geo = Friend.geocoded.where(sql_query, query: "%#{params[:query]}%")
+      @markers = @friends_geo.map { |frnd| { lat: frnd.latitude, lng: frnd.longitude, infoWindow: render_to_string(partial: "info_window", locals: { friend: frnd }), image_url: helpers.asset_url('friendship.png') } }
     else
       @friends = Friend.all
       @friends_geo = Friend.geocoded
-      @markers = @friends_geo.map { |frnd| { lat: frnd.latitude, lng: frnd.longitude, infoWindow: render_to_string(partial: "info_window", locals: { friend: frnd }) } }
+      @markers = @friends_geo.map { |frnd| { lat: frnd.latitude, lng: frnd.longitude, infoWindow: render_to_string(partial: "info_window", locals: { friend: frnd }), image_url: helpers.asset_url('friendship.png') } }
     end
  end
 

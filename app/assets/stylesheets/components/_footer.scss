@@ -1,0 +1,22 @@
+.footer {
+  height: 60px;
+  background-color: $anthracite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // margin-top: 40px;
+  i {
+    color: $white;
+    font-size: 23px;
+    margin: 0 8px;
+  }
+}
+
+.container {
+  min-height: 100vh;
+  margin-bottom: -50px;
+}
+
+.footer, .push {
+  height: 50px;
+}

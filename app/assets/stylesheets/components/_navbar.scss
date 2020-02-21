@@ -1,7 +1,10 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: $white;
-  border-bottom: 1px solid $anthracite;
+  border-bottom: 3px solid $anthracite;
+  .flex {
+    margin-right: 10px;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -10,4 +13,54 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.right-nav {
+  display: flex;
+}
+
+.nav-item {
+  margin-left: 10px;
+}
+
+.dropdown-menu {
+    border: 3px solid $anthracite;
+    a:hover {
+      color: $white;
+      background-color: $anthracite;
+    }
+  }
+
+.nav-link {
+  border: 1px solid $warm-orange;
+  &:hover {
+    background-color: $warm-orange;
+  }
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: $warm-orange;
+  &:hover {
+    color: $white;
+  }
+}
+
+.nav-search {
+  display: flex;
+  // input {
+  //   border-top: 3px solid $anthracite;
+  //   border-left: 3px solid $anthracite;
+  //   border-bottom: 3px solid $anthracite;
+  // }
+  input {
+    border: 1px solid $anthracite;
+    background-color: $white;
+  }
+  [type="submit"] {
+    color: $anthracite;
+    text-transform: uppercase;
+  }
+  [type="submit"]:hover {
+    color: $white;
+  }
 }
