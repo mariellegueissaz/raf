@@ -8,7 +8,7 @@
       <div class="card-img">
           <div class="img-card">
             <% if friend.photo.attached? %>
-            <%= image_tag(friend.photo, class: "img-card", :alt => "friend") %>
+            <%= cl_image_tag friend.photo.key, class: "img-card", :alt => "friend" %>
           <% else %>
             <%= image_tag("friend.png", class: "img-card", :alt => "friend") %>
           <% end %>
