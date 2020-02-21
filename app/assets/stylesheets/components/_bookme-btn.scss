@@ -5,6 +5,10 @@
   border: 3px solid $anthracite;
   text-align: center;
   margin-top: 30px;
+  a {
+    display: block;
+    width: 100%;
+  }
 }
 
 .bookme-btn:hover {
