@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2020_02_21_101550) do
-
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,8 +61,6 @@ ActiveRecord::Schema.define(version: 2020_02_21_101550) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
-    t.bigint "review_id"
-    t.index ["review_id"], name: "index_friends_on_review_id"
     t.index ["user_id"], name: "index_friends_on_user_id"
   end
 
@@ -101,7 +97,6 @@ ActiveRecord::Schema.define(version: 2020_02_21_101550) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "friends"
   add_foreign_key "bookings", "users"
-  add_foreign_key "friends", "reviews"
   add_foreign_key "friends", "users"
   add_foreign_key "reviews", "bookings"
   add_foreign_key "reviews", "friends"
