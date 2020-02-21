@@ -27,8 +27,7 @@ hugo = Friend.create!(
   location: "Mulhouse",
   user_id: arthur.id
 )
-file = URI.open('https://source.unsplash.com/collection/4488972/214x214')
-hugo.photo.attach(io: file, filename: 'boy1.jpeg', content_type: 'image/jpeg')
+hugo.photo.attach(io: File.open('app/assets/images/boy1.jpeg'), filename: 'boy.jpg')
 
 lea = Friend.create!(
   first_name: "Lea",
@@ -39,8 +38,7 @@ lea = Friend.create!(
   location: "Annemasse",
   user_id: arthur.id
 )
-file = URI.open('https://source.unsplash.com/collection/4343709/214x214')
-lea.photo.attach(io: file, filename: 'girl1.jpeg', content_type: 'image/jpeg')
+lea.photo.attach(io: File.open('app/assets/images/girl1.jpeg'), filename: 'girl.jpg')
 
 thibault = Friend.create!(
   first_name: "Thibault",
@@ -51,8 +49,7 @@ thibault = Friend.create!(
   location: "Aix-en-Provence",
   user_id: arthur.id
 )
-file = URI.open('https://source.unsplash.com/collection/3781084/214x214')
-thibault.photo.attach(io: file, filename: 'boy2.jpeg', content_type: 'image/jpeg')
+thibault.photo.attach(io: File.open('app/assets/images/boy2.jpeg'), filename: 'boy.jpg')
 
 sinan = Friend.create!(
   first_name: "Sinan",
@@ -63,8 +60,7 @@ sinan = Friend.create!(
   location: "New York",
   user_id: arthur.id
 )
-file = URI.open("https://source.unsplash.com/collection/3688872/214x214")
-sinan.photo.attach(io: file, filename: 'boy1.jpeg', content_type: 'image/jpeg')
+sinan.photo.attach(io: File.open('app/assets/images/boy3.jpeg'), filename: 'boy.jpg')
 
 georgina = Friend.create!(
   first_name: "Georgina",
@@ -75,8 +71,7 @@ georgina = Friend.create!(
   location: "Chambéry",
   user_id: arthur.id
 )
-file = URI.open('https://source.unsplash.com/collection/1107894/214x214')
-georgina.photo.attach(io: file, filename: 'girl2.jpeg', content_type: 'image/jpeg')
+georgina.photo.attach(io: File.open('app/assets/images/girl2.jpeg'), filename: 'girl.jpg')
 
 
 nicoleta = Friend.create!(
@@ -88,8 +83,7 @@ nicoleta = Friend.create!(
   location: "Romania",
   user_id: arthur.id
 )
-file = URI.open('https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
-nicoleta.photo.attach(io: file, filename: 'girl3.jpeg', content_type: 'image/jpeg')
+nicoleta.photo.attach(io: File.open('app/assets/images/girl3.jpeg'), filename: 'girl.jpg')
 
 emilie = Friend.create!(
   first_name: "Emilie",
@@ -100,11 +94,10 @@ emilie = Friend.create!(
   location: "Geneva",
   user_id: arthur.id
 )
-file = URI.open('https://source.unsplash.com/collection/9559153/214x214')
-emilie.photo.attach(io: file, filename: 'girl4.jpeg', content_type: 'image/jpeg')
+emilie.photo.attach(io: File.open('app/assets/images/girl4.jpeg'), filename: 'girl.jpg')
 
 maxime = Friend.create!(
-  first_name: "maxime",
+  first_name: "Maxime",
   last_name: "Personnic",
   friendship_category: "Sporty",
   price_p_hour: "25",
@@ -112,8 +105,7 @@ maxime = Friend.create!(
   location: "Lyon",
   user_id: arthur.id
 )
-file = URI.open('https://source.unsplash.com/collection/3688872/214x214')
-maxime.photo.attach(io: file, filename: 'boy4.jpeg', content_type: 'image/jpeg')
+maxime.photo.attach(io: File.open('app/assets/images/boy4.jpeg'), filename: 'boy.jpg')
 
 puts "Creating the faker ones..."
 
@@ -126,8 +118,7 @@ f = Friend.create!(
   location: Faker::Address.city,
   user_id: arthur.id
   )
-file = URI.open("https://source.unsplash.com/collection/4488972/214x214")
-f.photo.attach(io: file, filename: 'image.jpeg', content_type: 'image/jpeg')
+f.photo.attach(io: File.open('app/assets/images/boy5.jpeg'), filename: 'boy.jpg')
 
 f = Friend.create!(
   first_name: Faker::Name.male_first_name,
@@ -138,8 +129,7 @@ f = Friend.create!(
   location: Faker::Address.city,
   user_id: arthur.id
   )
-file = URI.open("https://source.unsplash.com/collection/3508519/214x214")
-f.photo.attach(io: file, filename: 'image.jpeg', content_type: 'image/jpeg')
+f.photo.attach(io: File.open('app/assets/images/boy6.jpeg'), filename: 'boy.jpg')
 
 f = Friend.create!(
   first_name: Faker::Name.female_first_name,
@@ -150,8 +140,7 @@ f = Friend.create!(
   location: Faker::Address.city,
   user_id: arthur.id
   )
-file = URI.open("https://source.unsplash.com/collection/2721405/214x214")
-f.photo.attach(io: file, filename: 'image.jpeg', content_type: 'image/jpeg')
+f.photo.attach(io: File.open('app/assets/images/girl5.jpeg'), filename: 'girl.jpg')
 
 f = Friend.create!(
   first_name: Faker::Name.female_first_name,
@@ -162,8 +151,7 @@ f = Friend.create!(
   location: Faker::Address.city,
   user_id: arthur.id
   )
-file = URI.open("https://source.unsplash.com/collection/2448884/214x214")
-f.photo.attach(io: file, filename: 'image.jpeg', content_type: 'image/jpeg')
+f.photo.attach(io: File.open('app/assets/images/girl6.jpeg'), filename: 'girl.jpg')
 
 f = Friend.create!(
   first_name: Faker::Name.female_first_name,
@@ -174,8 +162,7 @@ f = Friend.create!(
   location: Faker::Address.city,
   user_id: arthur.id
   )
-file = URI.open("https://source.unsplash.com/collection/4488972/214x214")
-f.photo.attach(io: file, filename: 'image.jpeg', content_type: 'image/jpeg')
+f.photo.attach(io: File.open('app/assets/images/girl7.jpeg'), filename: 'girl.jpg')
 
 f = Friend.create!(
   first_name: Faker::Name.male_first_name,
@@ -186,8 +173,7 @@ f = Friend.create!(
   location: Faker::Address.city,
   user_id: arthur.id
   )
-file = URI.open("https://source.unsplash.com/collection/3409546/214x214")
-f.photo.attach(io: file, filename: 'image.jpeg', content_type: 'image/jpeg')
+f.photo.attach(io: File.open('app/assets/images/boy7.jpeg'), filename: 'boy.jpg')
 
 f = Friend.create!(
   first_name: Faker::Name.male_first_name,
@@ -198,8 +184,7 @@ f = Friend.create!(
   location: Faker::Address.city,
   user_id: arthur.id
   )
-file = URI.open('https://source.unsplash.com/collection/3781084/214x214')
-f.photo.attach(io: file, filename: 'image.jpeg', content_type: 'image/jpeg')
+f.photo.attach(io: File.open('app/assets/images/boy8.jpeg'), filename: 'boy.jpg')
 
 f = Friend.create!(
   first_name: Faker::Name.female_first_name,
@@ -210,7 +195,6 @@ f = Friend.create!(
   location: Faker::Address.city,
   user_id: arthur.id
   )
-file = URI.open("https://source.unsplash.com/collection/5018685/214x214")
-f.photo.attach(io: file, filename: 'image.jpeg', content_type: 'image/jpeg')
+f.photo.attach(io: File.open('app/assets/images/girl8.jpeg'), filename: 'girl.jpg')
 
 puts "Done!"
