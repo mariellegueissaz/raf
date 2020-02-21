@@ -10,5 +10,15 @@
   a {
     color: $white;
     font-size: 22px;
+    display: block;
+    width: 100%;
   }
+}
+
+.backlink:hover {
+  cursor: pointer;
+}
+
+.edit-link:hover {
+  cursor: pointer;
 }
