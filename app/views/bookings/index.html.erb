@@ -21,6 +21,7 @@
 
               <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure? #{booking.friend.first_name} is already disappointed!"} do %>
               <i class= "far fa-trash-alt" id="delete"></i>
+              <% end %>
             </div>
             <div class="common-btn">
               <%= link_to "Edit this booking", edit_booking_path(booking)  %>
