@@ -18,12 +18,12 @@
 
           <div class="footer-booking-card">
             <div class="common-btn">
-              <%= link_to friend_booking_path(booking.friend, booking), method: :delete, data: { confirm: "Are you sure? #{booking.friend.first_name} is already disappointed!"} do %>
-                <i class= "far fa-trash-alt" id="delete"></i>
-              <% end %>
+
+              <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure? #{booking.friend.first_name} is already disappointed!"} do %>
+              <i class= "far fa-trash-alt" id="delete"></i>
             </div>
             <div class="common-btn">
-              <%= link_to "Edit this booking", edit_friend_booking_path(booking.friend, booking)  %>
+              <%= link_to "Edit this booking", edit_booking_path(booking)  %>
             </div>
           </div>
 
@@ -38,31 +38,22 @@
     <% @previous_bookings.each do |previous_booking| %>
       <div class="booking-cards">
 
-        <div class="booking-card-img">
-          <% if previous_booking.friend.photo.attached? %>
-            <%= image_tag(previous_booking.friend.photo, class: "bk-img-card", :alt => "friend") %>
-          <% else %>
-            <%= image_tag("friend.png", class: "bk-img-card", :alt => "friend") %>
-          <% end %>
-        </div>
-
-        <div class="bk-card-body">
-          <h3 class="bk-card-title"><%= previous_booking.friend.first_name %> <%= previous_booking.friend.last_name %></h3>
-          <p class="bk-card-text"><i class="fas fa-clock"></i> <%= previous_booking.start_time.strftime("%d-%m %H:%M") %> <i class="fas fa-long-arrow-alt-right"></i> <%= previous_booking.end_time.strftime("%d-%m %H:%M") %></p>
-          <p class="card-text">Total amount <span class="bolder-text">$<%= previous_booking.booking_price %></span></p>
-
-          <div class="footer-booking-card">
-            <div class="common-btn">
-              <%= link_to friend_booking_path(previous_booking.friend, previous_booking), method: :delete, data: { confirm: "Are you sure? #{previous_booking.friend.first_name} is already disappointed!"} do %>
-                <i class= "far fa-trash-alt" id="delete"></i>
-              <% end %>
-            </div>
-
-            <div class="common-btn">
-              <%= link_to "Edit this booking", edit_friend_booking_path(previous_booking.friend, previous_booking)  %>
-            </div>
+      <div class="booking-card-img">
+        <% if previous_booking.friend.photo.attached? %>
+          <%= image_tag(previous_booking.friend.photo, class: "bk-img-card", :alt => "friend") %>
+        <% else %>
+          <%= image_tag("friend.png", class: "bk-img-card", :alt => "friend") %>
+        <% end %>
+      </div>
+      <div class="bk-card-body">
+        <h3 class="bk-card-title"><%= previous_booking.friend.first_name %> <%= previous_booking.friend.last_name %></h3>
+        <p class="bk-card-text"><i class="fas fa-clock"></i> <%= previous_booking.start_time.strftime("%d-%m %H:%M") %> <i class="fas fa-long-arrow-alt-right"></i> <%= previous_booking.end_time.strftime("%d-%m %H:%M") %></p>
+        <p class="card-text">Total amount <span class="bolder-text">$<%= previous_booking.booking_price %></span></p>
+        <div class="footer-booking-card">
+          <div class="common-btn">
+            <%= link_to "Review", new_booking_review_path(previous_booking)  %>
           </div>
-        </div>
+      </div>
 
       </div>
     <% end %>
