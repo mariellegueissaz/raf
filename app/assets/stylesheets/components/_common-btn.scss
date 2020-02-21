@@ -4,6 +4,10 @@
   background-color: $white;
   border: 3px solid $anthracite;
   text-align: center;
+  a {
+    display: block;
+    width: 100%;
+  }
 }
 
 .common-btn:hover {
