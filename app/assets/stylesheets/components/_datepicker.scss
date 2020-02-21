@@ -4,7 +4,7 @@
   border: 3px solid $anthracite;
   &:hover {
     background-color: $anthracite;
-    color: $white;
+    color: $white !important;
   }
 }
 
@@ -40,7 +40,7 @@
 }
 
 .bootstrap-datetimepicker-widget td span:hover {
-  background-color: $anthracite !important;
+  background-color: $white !important;
   color: $white;
 }
 

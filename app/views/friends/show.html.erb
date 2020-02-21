@@ -38,8 +38,44 @@
   </div>
 </div>
 
-<% @friend.reviews.each do |review| %>
-<%= review.content %>
-<%= review.rating %>
-<%= review.friend.user.email %>
+<% unless @friend.reviews.count == 0 %>
+  <h6>Reviews</h6>
+  <div class="reviews-cards">
+      <% @friend.reviews.each do |review| %>
+        <div class="review">
+          <div class="author">
+            <p><i class="fas fa-user"></i> <%= review.friend.user.email %></p>
+          </div>
+          <div class="flex">
+            <div class="review-text">
+              <p><%= review.content %></p>
+            </div>
+            <div class="rate">
+              <p><%= review.rating %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+  </div>
 <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

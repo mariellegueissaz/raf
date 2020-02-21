@@ -1,0 +1,56 @@
+h6 {
+  text-transform: uppercase;
+  font-size: 30px;
+  margin-top: 50px;
+}
+.reviews-cards {
+  margin-top: 10px;
+  border: 3px solid $anthracite;
+  // border-top: 3px solid $anthracite;
+  // border-right: 3px solid $anthracite;
+  // border-left: 3px solid $anthracite;
+  max-width: 1200px;
+}
+
+.review {
+  margin-bottom: 20px;
+  // border-bottom: 1px solid $anthracite;
+  padding: 10px;
+  // display: flex;
+  p {
+    margin-bottom: 5px;
+  }
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.review-text {
+  font-style: italic;
+  max-width: 900px;
+  margin-top: 10px;
+}
+
+.rate {
+  margin-top: 10px;
+  border: 3px solid $blue-my;
+  width: 30px;
+  height: 30px;
+  // display: flex;
+  justify-content: center;
+  text-align: center;
+  p {
+    color: $blue-my;
+    font-weight: 700;
+  }
+}
+
+.author {
+  border-bottom: 1px solid $anthracite;
+  p {
+    font-weight: 700;
+    color: $warm-orange;
+  }
+}

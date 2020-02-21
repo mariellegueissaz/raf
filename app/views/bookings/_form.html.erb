@@ -1,5 +1,5 @@
 <div class="form-container">
-  <h1>Book name</h1>
+  <h1>Book <%= @friend.first_name %></h1>
   <div class="form-box">
     <%= simple_form_for [@friend, @booking] do |f| %>
       <%= f.input :start_time, as: :date_time_picker, input_html:
@@ -8,7 +8,7 @@
           date_format: "YYYY.MM.DD hh:mm A",
           date_day_view_header_format: 'MMM YYYY',
           date_side_by_side: true,
-          date_min_date: Time.current.strftime('%Y-%m-%d')
+          # date_min_date: Time.current.strftime('%Y-%m-%d')
         }
       }%>
 
