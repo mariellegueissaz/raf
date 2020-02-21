@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.all.where('user = current_user')
+    @bookings = Booking.all.where(user: current_user)
     @future_bookings = @bookings.select {|booking| booking.start_time.utc > Date.today}
     @previous_bookings = @bookings.reject {|booking| booking.start_time.utc > Date.today}
   end
